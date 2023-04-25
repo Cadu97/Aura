@@ -1,0 +1,20 @@
+({
+ getAccountC : function(component) {
+  
+  let action = component.get("c.getaccountAcc");
+  
+        action.setCallback(this, function(response){
+           
+          let state = response.getState();
+            console.log(state);
+
+            if(state == "SUCCESS"){
+                component.set("v.Acc", response.getReturnValue());
+                console.log(response.getReturnValue());
+                     
+        }
+                           
+ });
+       
+    }
+})
