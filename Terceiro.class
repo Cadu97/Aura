@@ -1,0 +1,6 @@
+public class AccountC {
+    @AuraEnabled
+    public static List <Account> accountAcc(){
+        return[SELECT Name, Rating, AnnualRevenue, Contatado__C FROM Account WHERE Rating like 'Hot'];
+    }
+}
