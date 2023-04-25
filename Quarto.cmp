@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ 
+    <aura:attribute name="pageReference" type="Object"/>
+      <lightning:navigation aura:id="navService"/> 
+      <lightning:card iconName="standard:user"  title="Lista de compras para o escritório">
+          
+          <Div class="slds-p-around_medium">
+    
+               <lightning:recordEditForm aura:id="recordEditForm"
+                              objectApiName="ListaCompras__c"
+                              onsuccess="{!c.handleSuccess}">
+              
+               
+        <lightning:inputfield fieldName= "NomeProduto__c" aura:id="field"/>
+        <lightning:inputfield fieldName= "DataCompra__c" aura:id="field"/>
+        <lightning:inputfield fieldName= "Quantidade__c" aura:id="field"/>
+        <lightning:inputfield fieldName= "PrecoUnitario__c" aura:id="field"/>
+        <lightning:inputfield fieldName= "PrecoTotal__c" aura:id="field"/>
+        
+        <lightning:button class="slds-m-top_small" onclick="{! c.handleReset }" label="Limpar"></lightning:button>
+        <lightning:button class="slds-m-top_small" type="submit" variant="brand" label="Novo item" onclick="{! c.handleClick }"></lightning:button>
+                   
+                </lightning:recordEditForm>
+        </Div>
+    </lightning:card>
+                   
+</aura:component>
