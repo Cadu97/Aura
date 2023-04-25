@@ -1,0 +1,13 @@
+({
+	showToast : function(component, event, helper) {
+        var toastEvent = $A.get("e.force:showToast");
+        
+        toastEvent.setParams({
+            "title": "O lead foi inserido com sucesso!",
+            "message": "Sextouu!",
+            "type": "Sucess"
+        });
+        
+        toastEvent.fire();
+	}
+})
